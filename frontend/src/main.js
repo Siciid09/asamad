@@ -1,9 +1,12 @@
+// frontend/src/main.js
 import { createApp } from 'vue';
 import App from './App.vue';
-import router from './router';
-import './assets/main.css'; // Main CSS file for Tailwind
+import router from './router/index.js';
+import store from './store.js'; // Import the store
+import './assets/main.css';
 
-const app = createApp(App);
+createApp(App)
+    .use(router)
+    .use(store) // Use the store
+    .mount('#app');
 
-app.use(router);
-app.mount('#app');
